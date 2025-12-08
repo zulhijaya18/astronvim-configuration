@@ -7,7 +7,17 @@ return {
       "stevearc/dressing.nvim",
     },
     config = function()
-      require("flutter-tools").setup{}
+      require("flutter-tools").setup {
+        lsp = {
+          capabilities = require("astrolsp").capabilities,
+          on_attach = require("astrolsp").on_attach,
+          settings = {
+            dart = {
+              enableSnippets = true,
+            },
+          },
+        },
+      }
     end
   }
 }

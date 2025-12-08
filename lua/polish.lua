@@ -1,12 +1,47 @@
 -- Polish config - runs after all plugins loaded
 
+-- Make entire UI transparent
+local transparent_hl = {
+  "Normal",
+  "StatusLine",
+  "StatusLineNC",
+  "TabLine",
+  "TabLineFill",
+  "TabLineSel",
+  "LineNr",
+  "SignColumn",
+  "WinSeparator",
+  "NeoTreeNormal",
+  "NeoTreeNormalNC",
+  "NeoTreeEndOfBuffer",
+  "NeoTreeWinSeparator",
+  "NeoTreeTabActive",
+  "NeoTreeTabInactive",
+  "NeoTreeTitleBar",
+  "NeoTreeFloatBorder",
+  "FloatBorder",
+  "NeoTree",
+  "WinBar",
+  "WinBarNC",
+  "Breadcrumb",
+  "BreadcrumbBackground",
+  "CmpItemAbbrMatch",
+  "CmpItemAbbrMatchFuzzy",
+}
+for _, group in ipairs(transparent_hl) do
+  local hl = vim.api.nvim_get_hl(0, { name = group })
+  hl.bg = nil
+  hl.ctermbg = nil
+  vim.api.nvim_set_hl(0, group, hl)
+end
+
 local last_key = {}
 
 -- Double tap j untuk move 6 lines
 vim.keymap.set("n", "j", function()
   local count = vim.v.count1
   local now = vim.uv.now()
-  if last_key.j and (now - last_key.j) < 140 then
+  if last_key.j and (now - last_key.j) < 100 then
     vim.cmd("normal! " .. (count * 5) .. "j")
     last_key.j = nil
   else
@@ -19,7 +54,7 @@ end, { noremap = true, silent = true })
 vim.keymap.set("n", "k", function()
   local count = vim.v.count1
   local now = vim.uv.now()
-  if last_key.k and (now - last_key.k) < 140 then
+  if last_key.k and (now - last_key.k) < 100 then
     vim.cmd("normal! " .. (count * 5) .. "k")
     last_key.k = nil
   else

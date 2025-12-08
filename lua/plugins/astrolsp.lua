@@ -45,6 +45,31 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      dartls = {
+        settings = {
+          dart = {
+            enableSnippets = true,
+            enableSdkFormatter = true,
+            lineLength = 80,
+          },
+        },
+      },
+      ts_ls = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+      },
     },
     -- customize how language servers are attached
     handlers = {

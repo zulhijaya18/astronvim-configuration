@@ -3,7 +3,7 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
     window = {
-      width = 50,
+      width = 40,
     },
     use_image_in_layout = false,
     enable_diagnostics = false,
@@ -14,7 +14,7 @@ return {
       -- Remove all backgrounds from neotree highlight groups
       local all_hl_groups = vim.fn.getcompletion("", "highlight")
       for _, group in ipairs(all_hl_groups) do
-        if group:match("^NeoTree") or group:match("^TabLine") then
+        if group:match "^NeoTree" or group:match "^TabLine" then
           local hl = vim.api.nvim_get_hl(0, { name = group })
           hl.bg = nil
           hl.ctermbg = nil

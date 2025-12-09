@@ -24,6 +24,11 @@ return {
     version = "2.28.0",
     lazy = false,
     opts = {
+      picker = {
+        layout = {
+          fullscreen = true,
+        },
+      },
       dashboard = {
         preset = {
           header = [[

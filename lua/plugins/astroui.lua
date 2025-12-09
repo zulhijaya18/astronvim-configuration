@@ -36,6 +36,16 @@ return {
         FoldColumn = { bg = "NONE" },
         VertSplit = { bg = "NONE" },
         WinSeparator = { bg = "NONE" },
+        -- Syntax color overrides (Sonokai Andromeda)
+        String = { fg = "#edc763" },
+        Number = { fg = "#edc763" },
+        Boolean = { fg = "#fb617e" },
+        Function = { fg = "#6dcae8" },
+        Keyword = { fg = "#bb97ee" },
+        Comment = { fg = "#7e8294", italic = true },
+        Type = { fg = "#52c1a7" },
+        Variable = { fg = "#e1e3e4" },
+        Operator = { fg = "#f89860" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         Normal = { bg = "NONE" },

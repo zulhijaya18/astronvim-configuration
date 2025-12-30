@@ -46,6 +46,10 @@ return {
         Type = { fg = "#52c1a7" },
         Variable = { fg = "#e1e3e4" },
         Operator = { fg = "#f89860" },
+        -- Snacks picker highlight
+        SnacksPickerListCursorLine = { bg = "#ffffff", fg = "#1a1b26" },
+        CursorLine = { bg = "#001170" },
+        Visual = { bg = "#ffffff", fg = "#1a1b26" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         Normal = { bg = "NONE" },

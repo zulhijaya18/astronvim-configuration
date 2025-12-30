@@ -42,7 +42,7 @@ vim.keymap.set("n", "j", function()
   local count = vim.v.count1
   local now = vim.uv.now()
   if last_key.j and (now - last_key.j) < 100 then
-    vim.cmd("normal! " .. (count * 5) .. "j")
+    vim.cmd("normal! " .. (count * 7) .. "j")
     last_key.j = nil
   else
     vim.cmd("normal! " .. count .. "j")
@@ -55,7 +55,7 @@ vim.keymap.set("n", "k", function()
   local count = vim.v.count1
   local now = vim.uv.now()
   if last_key.k and (now - last_key.k) < 100 then
-    vim.cmd("normal! " .. (count * 5) .. "k")
+    vim.cmd("normal! " .. (count * 7) .. "k")
     last_key.k = nil
   else
     vim.cmd("normal! " .. count .. "k")
